@@ -22,7 +22,6 @@ class SongsController < ApplicationController
   end
 
   post '/songs' do
-    #binding.pry
     @song = Song.create(name: params["Name"])
     @song.artist = Artist.find_or_create_by(name: params["Artist Name"])
     @song.genre_ids = params["genres"] #plural b/c whats inside table...saving array here
@@ -52,7 +51,6 @@ class SongsController < ApplicationController
   end
 
   patch '/songs/:slug' do
-    #binding.pry
     if
       @song = Song.find_by_slug(params["slug"])
     else

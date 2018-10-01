@@ -52,7 +52,7 @@ class SongsController < ApplicationController
   end
 
   patch '/songs/:slug' do
-    binding.pry
+    #binding.pry
     if
       @song = Song.find_by_slug(params["slug"])
     else

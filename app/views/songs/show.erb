@@ -1,4 +1,8 @@
 
+<% if flash.has?(:message) %>
+  <%= flash[:message] %>
+<% end %>
+
 <%= @song.name %>'s genres and artist:
 
 Genres:

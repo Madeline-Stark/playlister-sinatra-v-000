@@ -1,4 +1,8 @@
 
+<% if flash.has?(:message) %>
+  <%= flash[:message] %>
+<% end %>
+
 <h1>Create a New Song</h1>
 <!--not sure if calling slug on song_name below will work..maybe pass in empty song variable and change its value in form?-->
 <form action='/songs' method="POST">

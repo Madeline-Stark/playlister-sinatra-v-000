@@ -1,4 +1,6 @@
 class SongsController < ApplicationController
+  enable :sessions
+  use Rack::Flash
 
   get '/songs' do
     @songs = Song.all
@@ -24,6 +26,7 @@ class SongsController < ApplicationController
     @song.genre_ids = params["genres"] #plural b/c whats inside table...saving array here
     @song.save
     @songs = Song.all
+    flash[:message] = "Successfully created song."
     redirect to "/songs/#{@song.slug}" #double quotes for interpolation
   end
 
